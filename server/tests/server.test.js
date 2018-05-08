@@ -12,7 +12,7 @@ describe('POST /todo', () => {
     it('should create a new todo', (done)=>{
         var text = 'Test todo text';
         request(app)
-        .post('/todo')
+        .post('/todos')
         .send({text})
         .expect(200)
         .expect((res)=>{
@@ -32,7 +32,7 @@ describe('POST /todo', () => {
     });
     it('should not create todo with invalid body', (done)=>{
         request(app)
-        .post('/todo')
+        .post('/todos')
         .send({})
         .expect(400)
         .expect((res)=>{
